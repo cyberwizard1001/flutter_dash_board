@@ -6,7 +6,7 @@ class Temperature extends StatefulWidget{
   _TemperatureState createState() => _TemperatureState();
 }
 
-class _TemperatureState extends State<Dashboard>{
+class _TemperatureState extends State<Temperature>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
