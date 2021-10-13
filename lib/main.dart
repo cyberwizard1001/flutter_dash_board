@@ -1,4 +1,6 @@
 import 'package:dash_board/dashboard.dart';
+import 'package:dash_board/layout_generator.dart';
+import 'package:dash_board/temperature.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: Dashboard(),
+      home: LayoutGenerator(),
     );
   }
 

@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dash_board/data_units.dart';
-import 'package:dash_board/length.dart';
-import 'package:dash_board/numbers.dart';
-import 'package:dash_board/power.dart';
-import 'package:dash_board/speed.dart';
-import 'package:dash_board/temperature.dart';
-import 'package:dash_board/volume.dart';
-import 'package:dash_board/weight.dart';
+
+import 'dart:ui';
 
 
 class Dashboard extends StatefulWidget {
@@ -18,61 +12,61 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
 
  void temperature(){
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Temperature()));
+    // Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => Temperature()));
   }
 
  void weight(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Weight()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Weight()));
  }
 
  void length(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Length()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Length()));
  }
 
  void volume(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Volume()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Volume()));
  }
 
  void dataunits(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => DataUnits()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => DataUnits()));
  }
 
  void power(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Power()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Power()));
  }
 
  void numbers(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Numbers()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Numbers()));
  }
 
  void speed(){
-   Navigator.push(
-       context,
-       MaterialPageRoute(builder: (context) => Speed()));
+   // Navigator.push(
+   //     context,
+   //     MaterialPageRoute(builder: (context) => Speed()));
  }
 
   Card makeDashboardItem(String title, IconData icon, Function executethis) {
     return Card(
       clipBehavior: Clip.antiAlias,
-      elevation: 5.0,
+      elevation: 1.0,
       margin: new EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xffDDDDDD),
+          color: Colors.white,
         ),
         child: new InkWell(
           onTap: () {
@@ -95,7 +89,7 @@ class _DashboardState extends State<Dashboard> {
               Center(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 18.0, color: Color(0xff222831)),
+                  style: TextStyle(fontSize:20.0, color: Color(0xff222831)),
                 ),
               )
             ],
@@ -111,13 +105,17 @@ class _DashboardState extends State<Dashboard> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("LETS CONVERT!"),
+          title: Text("LETS CONVERT!",style: TextStyle(color: Colors.black),),
           brightness: Brightness.dark,
           toolbarHeight: 75,
+          elevation: 0,
           centerTitle: true,
-          backgroundColor: Color(0xff30475E),
+          backgroundColor: Colors.white,
         ),
         body: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 2.0),
           child: GridView.count(
             crossAxisCount: 2,
