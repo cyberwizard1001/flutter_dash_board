@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dash_board/BuildCard.dart';
+import 'package:dash_board/Globals.dart' as globals;
 
 class LayoutGenerator extends StatefulWidget {
   const LayoutGenerator({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class LayoutGenerator extends StatefulWidget {
 }
 
 class _LayoutGeneratorState extends State<LayoutGenerator> {
+  final valueInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,6 +50,7 @@ class _LayoutGeneratorState extends State<LayoutGenerator> {
                      height: 10,
                    ),
                    TextField(
+                     controller: valueInputController,
                      decoration: InputDecoration(
                        labelText: 'Value',
                        labelStyle: TextStyle(color: Colors.white),
@@ -96,6 +99,10 @@ class _LayoutGeneratorState extends State<LayoutGenerator> {
                 )),
           ),
         ])));
+  }
+
+  void valueUpdate(){
+    globals.value = valueInputController.text as int;
   }
 }
 
