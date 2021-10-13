@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BuildCard extends StatefulWidget {
   BuildCard({Key? key}) : super(key: key);
@@ -22,15 +23,23 @@ class _BuildCardState extends State<BuildCard> {
               return Transform.scale(
                 scale: i == _index ? 1 : 0.9,
                 child: Card(
-                  color: Color(0x751C0B31),
+                  color: Color(0x75100223),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6)),
-                  child: Center(
-                    child: Text(
-                      "Card ${i + 1}",
-                      style: TextStyle(fontSize: 32,color: Colors.white),
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                          child: Text('32.34',
+                            style: GoogleFonts.montserrat(fontSize: 72,fontWeight: FontWeight.w400,color: Colors.white),
+                          ),
+                        ),
+                      Center(child: Text('Kilograms',
+                        style: GoogleFonts.montserrat(fontSize: 25,fontWeight: FontWeight.w400,color: Colors.white),
+                      ),)
+                    ],
                   ),
                 ),
               );
