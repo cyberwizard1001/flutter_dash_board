@@ -1,3 +1,4 @@
+import 'package:dash_board/dropdown_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dash_board/BuildCard.dart';
@@ -12,6 +13,7 @@ class LayoutGenerator extends StatefulWidget {
 
 class _LayoutGeneratorState extends State<LayoutGenerator> {
   final valueInputController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,14 +36,8 @@ class _LayoutGeneratorState extends State<LayoutGenerator> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 290.0),
-                        child: Text(
-                          'Weight',
-                          style: GoogleFonts.signika(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w300),
-                        ),
+                        padding: const EdgeInsets.only(right: 220.0),
+                        child: DropdownGenerator(),
                       ),
                       SizedBox(
                         height: 130,
