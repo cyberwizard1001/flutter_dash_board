@@ -36,7 +36,7 @@ class _LayoutGeneratorState extends State<LayoutGenerator> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 220.0),
+                        padding: const EdgeInsets.only(right: 240.0,top: 20),
                         child: DropdownGenerator(),
                       ),
                       SizedBox(

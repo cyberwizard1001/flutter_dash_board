@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class DropdownGenerator extends StatefulWidget {
   const DropdownGenerator({Key? key}) : super(key: key);
 
@@ -7,42 +8,35 @@ class DropdownGenerator extends StatefulWidget {
 }
 
 class _DropdownGeneratorState extends State<DropdownGenerator> {
+  final items = ['Kilograms', 'Grams', 'Node', 'Java', 'Python', 'PHP'];
+  String? _chosenValue = "Kilograms";
+
   @override
   Widget build(BuildContext context) {
-    var _chosenValue = "";
-    return DropdownButton<String>(
-      focusColor:Colors.white,
-      value: _chosenValue,
-      //elevation: 5,
-      style: TextStyle(color: Colors.white),
-      iconEnabledColor:Colors.black,
-      items: <String>[
-        'Android',
-        'IOS',
-        'Flutter',
-        'Node',
-        'Java',
-        'Python',
-        'PHP',
-      ].map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value,style:TextStyle(color:Colors.black),),
-        );
-      }).toList(),
-      hint:Text(
-        "Please choose a langauage",
-        style: TextStyle(
-            color: Colors.black,
-            fontSize: 14,
-            fontWeight: FontWeight.w500),
+
+    return Container(
+      width: 300,
+      padding: EdgeInsets.only(left: 20),
+      child: DropdownButton<String>(
+        value: _chosenValue,
+        icon: Icon(Icons.arrow_drop_down,color: Colors.white),
+        style: TextStyle(color: Colors.white),
+        iconEnabledColor: Colors.black,
+        items: items.map(buildMenuItem).toList(),
+        onChanged: (value) {
+          setState(() {
+            this._chosenValue = value!;
+          });
+        },
       ),
-      onChanged: (String? value) {
-        setState(() {
-          _chosenValue = value!;
-        });
-      },
     );
   }
 }
 
+DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+      value: item,
+      child: Text(
+        item,
+        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20,color: Colors.black),
+      ),
+    );
